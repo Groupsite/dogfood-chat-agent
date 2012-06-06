@@ -32,5 +32,10 @@ describe PivotalActivity do
     specify { subject.author.should == "James Kirk" }
     specify { subject.project_id.should == 26 }
     specify { subject.description.should == "James Kirk accepted More power to shields" }
+    specify { subject.should have(1).story }
+    specify { subject.stories.first.id.should == 109 }
+    specify { subject.stories.first.url.should == "https:///projects/26/stories/109" }
+    specify { subject.stories.first.accepted_at.should ==  DateTime.new(2009, 12, 14, 22, 12, 9)}
+    specify { subject.stories.first.current_state.should == "accepted" }
   end
 end
