@@ -7,7 +7,7 @@ require 'pivotal_activity'
 require 'gs_chat_room'
 
 chat_room = GsChatRoom.new(:host => "dogfood.groupsite.com",
-                           :id => 2,
+                           :id => 1,
                            :username => "Pivotal Tracker",
                            :password => "d81f894c5c130f3f")
 
