@@ -14,5 +14,5 @@ chat_room = GsChatRoom.new(:host => "dogfood.groupsite.com",
 post '/pivotal-update' do
   request.body.rewind
   activity = PivotalActivity.from_xml request.body.read
-  chat_room.post("<p>#{activity.description}</p><p>#{activity.stories.first.url}</p>")
+  chat_room.post(activity.html_summary)
 end
