@@ -11,6 +11,10 @@ chat_room = GsChatRoom.new(:host => "dogfood.groupsite.com",
                            :username => "Pivotal Tracker",
                            :password => "d81f894c5c130f3f")
 
+get '/status' do
+  "OK"
+end
+
 post '/pivotal-update' do
   request.body.rewind
   activity = PivotalActivity.from_xml request.body.read
